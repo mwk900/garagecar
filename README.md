@@ -1,6 +1,6 @@
-# Midlands AutoCare (Cloudflare Pages demo)
+# Midlands AutoCare Website
 
-Conversion-focused Vite + React + TypeScript website for a local Nottingham garage lead-generation landing page.
+Production-ready React + TypeScript website for a local UK garage, built with Vite and configured for Netlify deployment.
 
 ## How to run locally
 
@@ -8,29 +8,35 @@ Conversion-focused Vite + React + TypeScript website for a local Nottingham gara
 2. `npm run dev`
 3. Open `http://localhost:5173`
 
-Quality commands:
+Quality checks:
 
 - `npm run lint`
 - `npm run test`
 - `npm run build`
-- `npm run preview`
 
-## Cloudflare Pages deployment
+## How to deploy on Netlify
 
-- Framework preset: **Vite**
-- Build command: `npm run build`
-- Build output directory: `dist`
-- Node version: **20**
+1. Push repository to GitHub.
+2. In Netlify: **Add new site** → **Import from Git**.
+3. Build command: `npm run build`
+4. Publish directory: `dist`
+5. Ensure `netlify.toml` is detected.
+6. Deploy.
 
-SPA fallback is included in `public/_redirects` for static deployments.
+### Netlify Forms email notifications to `ss-ai@tuta.com`
 
-## Lead conversion features included
+1. After first deploy, submit the Contact form once so Netlify detects the form.
+2. In Netlify dashboard: **Site configuration** → **Forms** → **Notifications**.
+3. Add **Email notification**.
+4. Recipient: `ss-ai@tuta.com`.
+5. Save.
 
-- Above-the-fold call + booking CTA
-- Mobile sticky action bar (Call / Book)
-- Service cards with pricing anchors
-- Trust bullets + stats
-- Local-style testimonials
-- Nottingham service area coverage
-- Contact details, opening hours and map link
-- Booking form with front-end success state
+### Optional: serverless email enhancement
+
+An optional endpoint is included at `/.netlify/functions/send-email`.
+Connect it to SendGrid or Mailgun using API keys in Netlify environment variables if direct provider delivery is needed.
+
+## Notes
+
+- Testimonials/certification references are clearly marked as sample/demo copy and should be replaced with verified business details.
+- Website supports EN/PL language switching and persistent dark/light theme.

@@ -3,34 +3,34 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 import { renderWithProviders } from './test-utils';
 
-describe('conversion site basics', () => {
-  test('renders header navigation and hero headline', () => {
+describe('website basics', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    document.documentElement.dataset.theme = 'light';
+  });
+
+  test('renders header navigation', () => {
     renderWithProviders(<App />);
     expect(screen.getByRole('navigation', { name: /main navigation/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /trusted local garage in nottingham/i })).toBeInTheDocument();
+    expect(screen.getByText(/home/i)).toBeInTheDocument();
   });
 
-  test('book appointment link scroll target exists', () => {
-    renderWithProviders(<App />);
-    expect(screen.getByRole('link', { name: /book appointment/i })).toHaveAttribute('href', '#booking');
-    expect(document.getElementById('booking')).toBeInTheDocument();
-  });
-
-  test('booking form shows success state after submit', async () => {
+  test('theme toggle updates localStorage', async () => {
     const user = userEvent.setup();
     renderWithProviders(<App />);
-
-    await user.type(screen.getByLabelText(/name \*/i), 'Test Driver');
-    await user.type(screen.getByLabelText(/phone \*/i), '01151234567');
-    await user.selectOptions(screen.getByLabelText(/service needed/i), 'MOT Testing');
-    await user.click(screen.getByRole('button', { name: /request a callback/i }));
-
-    expect(screen.getByText(/thanks — we'll be in touch shortly/i)).toBeInTheDocument();
+    await user.click(screen.getByLabelText(/theme/i));
+    expect(localStorage.getItem('theme')).toContain('dark');
   });
 
-  test('sticky CTA has call and book actions', () => {
+  test('language toggle switches text', async () => {
+    const user = userEvent.setup();
     renderWithProviders(<App />);
-    expect(screen.getByRole('link', { name: /^call$/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /^book$/i })).toHaveAttribute('href', '#booking');
+    await user.click(screen.getByRole('button', { name: '🇵🇱' }));
+    expect(screen.getByText(/strona główna/i)).toBeInTheDocument();
+  });
+
+  test('blog list renders posts', () => {
+    renderWithProviders(<App />, '/blog');
+    expect(screen.getByText(/MOT checklist/i)).toBeInTheDocument();
   });
 });

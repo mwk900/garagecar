@@ -1,24 +1,28 @@
+import { Link } from 'react-router-dom';
+import { useTranslation } from '../hooks/useSiteContext';
 import { businessConfig } from '../config/business';
 
 export function Footer() {
+  const t = useTranslation();
+
   return (
     <footer className="footer">
       <div className="container footerGrid">
         <div>
-          <h3>{businessConfig.name}</h3>
-          <p>{businessConfig.address}</p>
+          <h3>{t.business.name}</h3>
+          <p>{t.business.address}</p>
           <p>{businessConfig.hours.weekdays}</p>
           <p>{businessConfig.hours.saturday}</p>
           <p>{businessConfig.hours.sunday}</p>
         </div>
         <div>
-          <h3>Contact</h3>
-          <p>{businessConfig.phone}</p>
-          <p>{businessConfig.email}</p>
-          <p className="muted small">Languages: English (default) • Polish (optional)</p>
+          <h3>{t.common.contactUs}</h3>
+          <p>{t.business.phone}</p>
+          <p>{t.business.email}</p>
         </div>
         <div>
-          <p className="small">Demo website content for preview purposes.</p>
+          <p>{t.common.example}</p>
+          <Link to="/contact">Cookie / GDPR</Link>
         </div>
       </div>
     </footer>

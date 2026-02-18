@@ -1,7 +1,6 @@
 import { Footer } from './Footer';
 import { Header } from './Header';
-import { StickyCtaBar } from './StickyCtaBar';
-import { businessConfig } from '../config/business';
+import { CookieBanner } from './CookieBanner';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,7 +8,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <Header />
       {children}
       <Footer />
-      <StickyCtaBar phone={businessConfig.phone} />
+      <CookieBanner />
     </>
   );
 }
