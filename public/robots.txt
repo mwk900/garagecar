@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://garagecar.pages.dev/sitemap.xml

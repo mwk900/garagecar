@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #0b1220;
+  --bg-soft: #111a2d;
+  --surface: #ffffff;
+  --text: #0b1220;
+  --text-inverse: #f8fafc;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --highlight: #f59e0b;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(11, 18, 32, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-inverse);
+  background: radial-gradient(circle at top right, #1e2a45, var(--bg) 55%);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  padding-bottom: 5.5rem;
+}
+
+img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.sectionAlt {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  margin-bottom: 0.8rem;
+}
+
+p {
+  margin-top: 0;
+}
+
+.sectionLead,
+.heroSub,
+.mutedText {
+  color: #c8d0dd;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  min-height: 46px;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btnLg {
+  min-height: 52px;
+  padding-inline: 1.25rem;
+}
+
+.btnPrimary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btnGhost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.btn:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.navItem:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.4);
+  outline-offset: 2px;
+}
+
+.siteHeader {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(10px);
+  background: rgba(11, 18, 32, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 72px;
+}
+
+.logoMark {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.mainNav {
+  display: none;
+  gap: 1rem;
+}
+
+.navItem {
+  color: #dbe3f0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navItem.active {
+  color: #fff;
+}
+
+.headerCall {
+  display: none;
+}
+
+.heroSection {
+  padding-top: 4.5rem;
+}
+
+.heroGrid {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: #0b1220;
+  background: var(--highlight);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.badgeWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badgePill {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.heroCard,
+.surfaceCard,
+.serviceCard,
+.successBanner,
+.bookingForm,
+.formWrap {
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.heroCard,
+.surfaceCard,
+.serviceCard,
+.successBanner,
+.bookingForm {
+  padding: 1.2rem;
+}
+
+.heroCard p,
+.surfaceCard p,
+.serviceCard p,
+.bookingForm label,
+.bookingForm input,
+.bookingForm select,
+.bookingForm textarea,
+.successBanner {
+  color: var(--text);
+}
+
+.cardGrid,
+.trustGrid,
+.testimonialsGrid,
+.stepsGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.priceTag {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.textAction {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.twoCol {
+  display: grid;
+  gap: 1rem;
+}
+
+.formWrap {
+  padding: 1.25rem;
+}
+
+.bookingForm {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.bookingForm input,
+.bookingForm textarea,
+.bookingForm select {
+  width: 100%;
+  padding: 0.65rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-family: inherit;
+}
+
+.successBanner {
+  border-left: 6px solid #16a34a;
+}
+
+.siteFooter {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 2.5rem 0 6rem;
+}
+
+.footerGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.mobileStickyCta {
+  position: fixed;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 60;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+  padding: 0.55rem;
+  border-radius: 14px;
+  background: #020617;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+.heroSectionMini {
+  padding-top: 3.2rem;
+}
+
+.articleWrap {
+  max-width: 760px;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding-bottom: 0;
+  }
+
+  .mainNav {
+    display: flex;
+  }
+
+  .headerCall {
+    display: inline-flex;
+  }
+
+  .heroGrid,
+  .twoCol {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: start;
+  }
+
+  .cardGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .trustGrid,
+  .testimonialsGrid,
+  .stepsGrid,
+  .footerGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mobileStickyCta {
+    display: none;
+  }
+
+  .siteFooter {
+    padding-bottom: 2.5rem;
+  }
+}
