@@ -1,6 +1,14 @@
-# Midlands AutoCare (Garage Landing Page)
+# Midlands AutoCare
 
-A conversion-focused, mobile-first garage website built with Vite + React + TypeScript.
+A Next.js portfolio demo for NorthSummit Agency, built as a full redesign of a fictional Nottingham MOT centre and independent garage.
+
+## Stack
+
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Vitest + Testing Library
 
 ## Run locally
 
@@ -16,10 +24,3 @@ npm run lint
 npm run test
 npm run build
 ```
-
-## Cloudflare Pages
-
-- Framework preset: Vite
-- Build command: `npm run build`
-- Output directory: `dist`
-- Node: 20
