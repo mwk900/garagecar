@@ -1,9 +1,19 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { heroPriceCards, trustBadges, workshopPhotos } from '@/lib/data';
 
 export function HeroSection() {
-  const heroImage = workshopPhotos[0];
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((i) => (i + 1) % workshopPhotos.length);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="section-shell overflow-hidden pb-8 pt-8 lg:pt-12">
@@ -72,15 +82,22 @@ export function HeroSection() {
 
           <div className="hidden fade-in lg:block">
             <div className="card-surface overflow-hidden rounded-[36px] p-3">
-              <Image
-                src={heroImage.src}
-                alt={heroImage.alt}
-                width={heroImage.width}
-                height={heroImage.height}
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                priority
-                className="h-[32rem] w-full rounded-[28px] object-cover"
-              />
+              <div className="relative h-[32rem] w-full overflow-hidden rounded-[28px]">
+                {workshopPhotos.map((photo, index) => (
+                  <Image
+                    key={photo.src}
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={photo.width}
+                    height={photo.height}
+                    sizes="(min-width: 1024px) 45vw, 100vw"
+                    priority={index === 0}
+                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+                      index === current ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
