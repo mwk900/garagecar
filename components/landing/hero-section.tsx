@@ -10,7 +10,7 @@ export function HeroSection() {
       <div className="section-inner">
         <div className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
           <div className="fade-up">
-            <p className="inline-flex rounded-full border border-accent/10 bg-accentSoft px-4 py-2 text-sm font-semibold text-accent">
+            <p className="inline-flex rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-sm font-medium text-slate-600">
               Nottingham MOT centre and independent garage
             </p>
             <h1 className="mt-6 max-w-3xl font-display text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[1.04] text-ink">
@@ -42,7 +42,11 @@ export function HeroSection() {
 
                   <Link
                     href={card.href}
-                    className="touch-target mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-accent px-4 py-3 text-center font-semibold text-white shadow-lift transition duration-300 hover:scale-[1.02] hover:bg-accentHover"
+                    className={`touch-target mt-5 inline-flex w-full items-center justify-center rounded-2xl px-4 py-3 text-center font-semibold transition duration-300 hover:scale-[1.02] ${
+                      card.id === 'mot'
+                        ? 'bg-accent text-white hover:bg-accentHover'
+                        : 'border border-[#1e293b] bg-transparent text-[#1e293b] hover:bg-[#1e293b] hover:text-white'
+                    }`}
                   >
                     {card.ctaLabel}
                   </Link>

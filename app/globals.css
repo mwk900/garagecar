@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #fafbfc;
-  --bg-secondary: #f3f4f6;
-  --bg-dark: #111827;
+  --bg-primary: #f8f8f6;
+  --bg-secondary: #f1f1ef;
+  --bg-dark: #0f172a;
   --bg-card: #ffffff;
   --accent: #2563eb;
   --accent-hover: #1d4ed8;
@@ -30,7 +30,7 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #fafbfc 0%, #f7f9fc 44%, #f3f4f6 100%);
+  background: #f8f8f6;
   color: var(--text-primary);
   font-family: var(--font-body), sans-serif;
   font-size: 16px;

@@ -18,7 +18,7 @@ export function IndependentAdvantageSection() {
               <div className="mt-4 grid gap-3 md:grid-cols-2">
                 <div
                   style={{ animationDelay: `${index * 120}ms` }}
-                  className="fade-up rounded-[24px] bg-accent px-5 py-5 text-white"
+                  className="fade-up rounded-[24px] bg-[#1e293b] px-5 py-5 text-white"
                 >
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Us</p>
                   <p className="mt-2 text-lg font-semibold">{item.usLabel}</p>

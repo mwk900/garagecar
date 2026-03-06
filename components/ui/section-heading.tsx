@@ -16,7 +16,7 @@ export function SectionHeading({
   return (
     <div className={`max-w-3xl ${alignment}`}>
       {eyebrow ? (
-        <p className="mb-4 inline-flex rounded-full border border-accent/10 bg-accentSoft px-4 py-2 font-medium text-accent">
+        <p className="mb-4 inline-flex rounded-full border border-slate-200 bg-slate-100 px-4 py-2 font-medium text-slate-600">
           {eyebrow}
         </p>
       ) : null}
